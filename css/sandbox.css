@@ -1,0 +1,295 @@
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+}
+
+.makeItAwesome{
+    transition: all 300ms;
+}
+
+.body {
+    border: 1px solid #abbbe6;
+    border-radius: 8px;
+    padding: 100px 100px 100px;
+    display: inline-block;
+    position: relative;
+    background: #eee;
+    background: linear-gradient(#abbbe6,#a7dcec);
+}
+
+.body.tab{
+    padding: 40px 10px 60px;
+}
+
+.body.mobile{
+    padding: 40px 10px 30px;
+}
+
+.body.desktop{
+    padding: 15px;
+}
+
+.screen {
+    background: #333;
+    background: linear-gradient(#777,#333);
+    height: 0;
+    width: 0;
+    box-shadow: inset 1px 1px 10px #252525;
+    overflow-y: auto;
+}
+
+.body.tab .screen{
+    height: 360px;
+    width: 320px;
+}
+
+.body.mobile .screen{
+    height: 240px;
+    width: 160px;
+}
+
+.body.desktop .screen{
+    height: 280px;
+    width: 560px;
+}
+
+.earpiece {
+    position: absolute;
+    left: 50%;
+    width: 0;
+    height: 5px;
+    background: #333;
+    border-radius: 20px;
+    top: 20px;
+    transform: scale(1);
+}
+
+.body.tab .earpiece{
+    width: 30px;
+    margin-left: -15px;
+}
+
+.body.mobile .earpiece{
+    width: 20px;
+    margin-left: -10px;
+}
+
+.body.desktop .earpiece{
+    transform: scale(0);
+}
+
+.proximitySensor {
+    position: absolute;
+    height: 0; width: 0;
+    background: rgba(51, 51, 51, 0.44);
+    top: 20px;
+    left: 35%;
+    border-radius: 100%;
+    transform: scale(1);
+}
+
+.body.tab .proximitySensor,
+.body.mobile .proximitySensor{
+    height: 5px; width: 5px;
+}
+
+.body.desktop .proximitySensor{
+    transform: scale(0);
+}
+
+.powerbutton {
+    position: absolute;
+    height: 0;
+    width: 6px;
+    background: #555;
+    border-right:1px solid #abbbe6;
+    left: -6px;
+    border-radius: 3px 0 0 3px;
+    top: 50px;
+    opacity: 1;
+}
+
+.body.tab .powerbutton{
+    height: 30px;
+}
+
+.body.mobile .powerbutton{
+    height: 20px;
+}
+
+.body.desktop .powerbutton{
+    opacity: 0; left: 0;
+    z-index: -1;
+}
+
+.volumebutton {
+    position: absolute;
+    height: 0;
+    width: 6px;
+    background: #555;
+    border-left:1px solid #abbbe6;
+    right: -6px;
+    border-radius: 0 3px 3px 0;
+    top: 60px;
+    opacity: 1;
+}
+
+.body.tab .volumebutton{
+    height: 80px;
+}
+
+.body.mobile .volumebutton{
+    height: 60px;
+}
+
+.body.desktop .volumebutton{
+    opacity: 0; right: 0; z-index: -1;
+}
+
+.menubutton {
+    height: 0; width: 0;
+    background: #40638e;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    margin-left: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.body.tab .menubutton{
+    opacity: 1;
+    bottom: 15px;
+    height: 30px; width: 30px;
+    margin-left: -15px;
+    cursor: pointer;
+}
+
+.body.mobile .menubutton{
+    opacity: 0;
+    bottom: 0;
+    cursor: default;
+}
+
+.body.desktop .menubutton{
+    height: 7px; width: 7px;
+    left: 95%; bottom: 3px;
+}
+
+.menuBar {
+    position: absolute;
+    bottom: 0px;
+    width: 320px;
+    background: #222;
+    height: 25px;
+    opacity: 0;
+}
+
+.body.mobile .menuBar{
+    opacity: 1;
+    bottom: 30px;
+    width: 160px;
+}
+
+.homebutton {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -5px;
+    height: 10px; width: 10px;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    transform: scale(0);
+    transition-delay: 200ms;
+}
+
+.body.mobile .homebutton{
+    transform: scale(1);
+}
+
+.frontcamera {
+    position: absolute;
+    height: 12px; width: 12px;
+    background: rgba(51, 51, 51, 0.44);
+    top: 17px;
+    left: 15%;
+    border-radius: 100%;
+    transform: scale(0);
+}
+
+.frontcamera:after{
+    content: "";
+    position: absolute;
+    top: 2px;left: 2px;right: 2px;bottom: 2px;
+    border: 2px solid #6b6b6b;
+    border-radius: 100%;
+}
+
+.body.mobile .frontcamera{
+    transform: scale(1);
+}
+
+.stand{
+    transform: scale(0);
+}
+
+.body.desktop .stand{
+    transform: scale(1);
+}
+
+.vertical {
+    height: 50px;
+    width: 50px;
+    background: #a7dcec;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    margin-left: -25px;
+}
+
+.horizontal {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    height: 10px;
+    background: #a7dcec;
+    bottom: -60px;
+    border-radius: 10px;
+}
+
+.holder {
+    width: 202px;
+    margin: 200px auto 0;
+}
+
+.holder.tab {
+    width: 342px;
+    margin: 50px auto 0;
+}
+
+.holder.mobile{
+    width: 182px;
+    margin: 100px auto 0;
+}
+
+.holder.desktop{
+    width: 592px;
+    margin: 100px auto 0;
+}
+
+body {
+    background: linear-gradient(#f5b1b1,#4a3e4e);
+}
+
+.label {
+    position: absolute;
+    left: 0;
+    bottom: 250px;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.4);
+    color: #333;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 40px;
+}
