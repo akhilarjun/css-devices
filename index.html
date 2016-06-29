@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>CSS Devices Mock</title>
+        <link rel="stylesheet" href="css/sandbox.css">
+        <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div class="label">
+            CSS<br> Devices<br> PlayGround
+        </div>
+        <div class="holder tab makeItAwesome">
+            <div class="body tab makeItAwesome">
+                <div class="earpiece makeItAwesome"></div>
+                <div class="proximitySensor makeItAwesome"></div>
+                <div class="frontcamera makeItAwesome"></div>
+                <div class="powerbutton makeItAwesome"></div>
+                <div class="volumebutton makeItAwesome"></div>
+                <div class="screen makeItAwesome"></div>
+                <div class="menubutton makeItAwesome"></div>
+                <div class="menuBar makeItAwesome">
+                    <div class="homebutton makeItAwesome"></div>
+                </div>
+                <div class="stand makeItAwesome">
+                    <div class="vertical"></div>
+                    <div class="horizontal"></div>
+                </div>
+            </div>
+        </div>
+        
+        <script   src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script>
+            var timer = 1000;
+            var transformToTab = function(){
+                setTimeout(function(){
+                    $('.body,.holder').removeClass('mobile');
+                    $('.body,.holder').removeClass('desktop');
+                    $('.body,.holder').addClass('tab');
+                    transformToMobile();
+                },timer);
+            }
+            var transformToDesktop = function(){
+                setTimeout(function(){
+                    $('.body,.holder').removeClass('mobile');
+                    $('.body,.holder').removeClass('tab');
+                    $('.body,.holder').addClass('desktop');
+                    transformToTab();
+                },timer);
+            }
+            var transformToMobile = function(){
+                setTimeout(function(){
+                    $('.body,.holder').removeClass('desktop');
+                    $('.body,.holder').removeClass('tab');
+                    $('.body,.holder').addClass('mobile');
+                    transformToDesktop();
+                },timer);
+            };
+            transformToMobile();
+        </script>
+    </body>
+</html>
